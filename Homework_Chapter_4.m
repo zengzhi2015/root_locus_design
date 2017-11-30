@@ -62,9 +62,11 @@ clear
 clc
 close all
 s = tf('s');
-a = 0.2;
-G = (s+a)/(s^2*(s+1));
-root_locus_tool(G);
+G = 1/(s^2*(s+1));
+% a = 0.2;
+% G = (s+a)/(s^2*(s+1));
+% root_locus_tool(G);
+controlSystemDesigner('rlocus',G)
 %% 4-5
 % zita = cos(phi) = 0.5;
 % phi = acos(zita) = 1rad = 60degree 
@@ -74,6 +76,7 @@ clc
 close all
 s = tf('s');
 G = 1/(s*(s+1)*(s+2)*(s+3));
+root_locus_tool(G);
 %% 4-6
 % 1~1.25
 clear
@@ -113,8 +116,11 @@ clear
 clc
 close all
 s = tf('s');
-a = 10;
-G = (s+2.5)/(s*(s+1)*(s+a));
+% a = 10;
+% G = (s+2.5)/(s*(s+1)*(s+a));
+% root_locus_tool(G);
+G = 1/(s*(s+1));
+controlSystemDesigner('rlocus',G)
 %% 4-9-3
 % Solving linear equations
 clear
